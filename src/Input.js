@@ -4,7 +4,7 @@ class Input
 {
 	ask()
 	{
-		return readlineSync.question('Please try?');
+		return readline.question('Please try? ');
 	}
 }
 
