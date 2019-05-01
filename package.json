@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "readline-sync": "^1.4.9",
     "tape": "^4.10.1",
     "underscore": "^1.9.1"
   }

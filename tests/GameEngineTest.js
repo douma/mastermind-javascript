@@ -1,5 +1,5 @@
 var test = require('tape');
-var underscore = require("underscore");
+var GameEngine = require('../src/GameEngine');
 
 test('should generate combination', function (t) {
     t.plan(1);
@@ -46,40 +46,4 @@ test('should return if match', function (t) {
    	t.equal(false, gameEngine.match("ABCD","DCBA"));
    	t.equal(false, gameEngine.match("ABBB","ACCD"));
 });
-
-class GameEngine 
-{
-	generateCombination()
-	{
-		return underscore.sample("AAAABBBBCCCCDDDDEEEEFFFF".split(""), 4).join("");
-	}
-
-	match(code, input)
-	{
-		return code == input;
-	}
-
-	endReached(num)
-	{
-		return num == 8;
-	}
-
-	hint(code, input)
-	{
-		const codeParts = code.split("");
-		const inputParts = input.split("");
-
-		let returnCode = "";
-		for(let x = 0; x<inputParts.length;x++){
-			if(inputParts[x] == codeParts[x]) {
-				returnCode += "+";
-			} else if(underscore.contains(codeParts,inputParts[x])) {
-				returnCode += "-";
-			} else {
-				returnCode += " ";
-			}
-		}
-		return returnCode;
-	}
-}
 
