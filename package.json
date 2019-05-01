@@ -7,11 +7,12 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/cucumber-js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cucumber": "^5.1.0",
     "readline-sync": "^1.4.9",
     "tape": "^4.10.1",
     "underscore": "^1.9.1"
